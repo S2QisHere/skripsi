@@ -52,7 +52,7 @@
                 <h5 style="color: #ff5100;">KLIK GAMBAR UNTUK MELIHAT INFO</h5>
             </div>
         </div>
-
+<!--  -->
         <style>
             .zoom {
                 transition: all .1s ease-in-out;
