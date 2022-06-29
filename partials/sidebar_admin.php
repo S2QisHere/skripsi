@@ -36,7 +36,7 @@
                     <a href="?page=klien" class="nav-link <?= isset($_GET['page']) ? (($_GET['page'] == "klien") ? "active" : "")  : "" ?>">
                         <i class="nav-icon fa fa-users" aria-hidden="true"></i>
                         <p>
-                            Data Klein
+                            Data Klien
                         </p>
                     </a>
                 </li>
