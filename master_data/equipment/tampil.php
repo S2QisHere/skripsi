@@ -1,60 +1,86 @@
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Tambah Data Equipment</h1>
-                </div>
-                <!-- <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">General Form</li>
-                    </ol>
-                </div> -->
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <!-- left column -->
-                <div class="col-md-6">
-                    <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Equipment</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
-                        <form>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Nama Perusahaan</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Harga</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                </div>
-                            </div>
-                            <!-- /.card-body -->
+      <!-- Main content -->
+      <section class="content">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-12">
 
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- /.card -->
+                      <div class="card mt-3">
+                          <div class="card-header d-flex align-items-center">
+                              <h4 class="flex-grow-1 m-0 font-weight-bold">Data Equipment</h4>
+                              <a href="?page=tambah_equipment" class="btn btn-primary">Tambah</a>
+                          </div>
+                          <!-- /.card-header -->
+                          <style>
+                              .small-td {
+                                  width: 1%;
+                                  white-space: nowrap;
+                              }
+                          </style>
+                          <div class="card-body">
+                              <table id="example2" class="table table-bordered table-striped">
+                                  <thead>
+                                      <tr>
+                                          <th class="text-center">Nama</th>
+                                          <th class="text-center">Harga</th>
+                                          <th class="text-center">Jenis</th>
+                                          <th class="text-center">Aksi</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <?php
+                                        $query = "
+                                            SELECT 
+                                               *
+                                            FROM 
+                                                tb_equipment
+                                            ";
+                                        $result = $conn->query($query);
+                                        ?>
+                                      <?php while ($row = $result->fetch_assoc()) : ?>
+                                          <tr>
+                                              <td class="text-center"><?= $row['nama'] ?></td>
+                                              <td class="text-center">Rp. <?= number_format($row['harga'], 0, ',', '.') ?></td>
+                                              <td class="text-center"><?= $row['jenis'] ?></td>
+                                              <td class="text-center small-td">
+                                                  <a href="?page=detail_equipment&id=<?= $row['id'] ?>" class="btn btn-sm btn-info">Detail</a>
+                                                  <a href="?page=edit_equipment&id=<?= $row['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                                                  <form action="?page=hapus_equipment&id=<?= $row['id'] ?>" method="POST" class="d-inline">
+                                                      <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Hapus </button>
+                                                  </form>
+                                              </td>
+                                          </tr>
+                                      <?php endwhile; ?>
 
-                </div>
-                <!--/.col (left) -->
-
-            </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+                                  </tbody>
+                              </table>
+                          </div>
+                          <!-- /.card-body -->
+                      </div>
+                      <!-- /.card -->
+                  </div>
+                  <!-- /.col -->
+              </div>
+              <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <script>
+      $(function() {
+          $('#example2').DataTable({
+              "paging": true,
+              "lengthChange": true,
+              "searching": true,
+              "ordering": true,
+              "info": true,
+              "autoWidth": false,
+              "responsive": true,
+          });
+      });
+  </script>

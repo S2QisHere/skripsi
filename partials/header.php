@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION['id'])) {
+    header('Location: ?page=login');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,12 +62,16 @@
     <script src="assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="assets/css/trix.css">
+    <script type="text/javascript" src="assets/js/trix.js"></script>
+
     <style>
         aside .active {
             background-color: #ff5100 !important;
             color: white !important;
         }
 
+        
         .btn-primary {
             border-color: #ff5100;
             background-color: #ff5100 !important;
@@ -101,6 +110,6 @@
     <div class="wrapper">
 
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
+        <!-- <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="assets/img/AdminLTELogo.png" alt="AdminLTELogo" width="60">
-        </div>
+        </div> -->

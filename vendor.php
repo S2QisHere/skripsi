@@ -52,7 +52,7 @@
                 <h5 style="color: #ff5100;">KLIK GAMBAR UNTUK MELIHAT INFO</h5>
             </div>
         </div>
-<!--  -->
+        <!--  -->
         <style>
             .zoom {
                 transition: all .1s ease-in-out;
@@ -264,7 +264,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
+                    <iframe width="100%" height="350" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam rem libero cupiditate dolorum. Eius ex ut ad dicta ea incidunt magnam quidem minus ducimus similique! Optio eos perspiciatis qui.</p>
                 </div>
             </div>
         </div>
@@ -277,27 +278,28 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
+                    <iframe width="100%" height="350" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam rem libero cupiditate dolorum. Eius ex ut ad dicta ea incidunt magnam quidem minus ducimus similique! Optio eos perspiciatis qui.</p>
                 </div>
             </div>
         </div>
     </div>
     <script>
         $("img#tradisional").on('click', function() {
-            $("#tradisionalModal .modal-body").html(`<iframe width="100%" height="350" src="https://www.youtube.com/embed/1SG2q2ZdX94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+            $("#tradisionalModal .modal-body iframe").attr('src', "https://www.youtube.com/embed/1SG2q2ZdX94");
             $("#tradisionalModal").modal('show');
         });
         $("#tradisionalModal").on("hidden.bs.modal", function() {
-            $("#tradisionalModal .modal-body").text("");
+            $("#tradisionalModal .modal-body iframe").attr('src', "");
         });
     </script>
     <script>
         $("img#modern").on('click', function() {
-            $("#modernModal .modal-body").html(`<iframe width="100%" height="350" src="https://www.youtube.com/embed/alKGYA1W8H4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+            $("#modernModal .modal-body iframe").attr('src', "https://www.youtube.com/embed/alKGYA1W8H4");
             $("#modernModal").modal('show');
         });
         $("#modernModal").on("hidden.bs.modal", function() {
-            $("#modernModal .modal-body").text("");
+            $("#modernModal .modal-body iframe").attr('src', "");
         });
     </script>
 </body>

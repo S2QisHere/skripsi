@@ -33,6 +33,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="?page=karyawan" class="nav-link <?= isset($_GET['page']) ? (($_GET['page'] == "karyawan") ? "active" : "")  : "" ?>">
+                        <i class="nav-icon fa fa-users" aria-hidden="true"></i>
+                        <p>
+                            Data Karyawan
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="?page=klien" class="nav-link <?= isset($_GET['page']) ? (($_GET['page'] == "klien") ? "active" : "")  : "" ?>">
                         <i class="nav-icon fa fa-users" aria-hidden="true"></i>
                         <p>
@@ -114,7 +122,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/UI/general.html" class="nav-link">
+                            <a href="laporan/klien.php" target="_blank" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Klien</p>
                             </a>

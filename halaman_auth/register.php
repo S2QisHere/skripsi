@@ -80,6 +80,7 @@ if (isset($_POST['submit'])) {
         <p class="login-box-msg">Form Pendaftaran</p>
 
         <form action="" method="post">
+          <!-- <label for="">NIK</label> -->
           <div class="input-group mb-3">
             <input type="text" class="form-control" autocomplete="off" required name="nik" placeholder="NIK" value="<?= isset($_POST['submit']) ? $_POST['nik'] : ''; ?>">
             <div class="input-group-append">
@@ -88,6 +89,7 @@ if (isset($_POST['submit'])) {
               </div>
             </div>
           </div>
+          <!-- <label for="">Nama Lengkap</label> -->
           <div class="input-group mb-3">
             <input type="text" class="form-control" autocomplete="off" required name="nama_lengkap" placeholder="Nama Lengkap" value="<?= isset($_POST['submit']) ? $_POST['nama_lengkap'] : ''; ?>">
             <div class="input-group-append">

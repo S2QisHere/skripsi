@@ -88,7 +88,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a href="halaman_auth/logout.php" class="nav-link" >
+            <a href="halaman_auth/logout.php" class="nav-link" onclick="return confirm('Are you sure?');">
                 Logout
             </a>
         </li>

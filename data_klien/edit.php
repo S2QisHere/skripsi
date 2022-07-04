@@ -11,7 +11,9 @@ if (isset($_GET['id'])) {
             INNER JOIN 
                 tb_user 
             ON 
-                tb_user.id=tb_klien.id_user";
+                tb_user.id=tb_klien.id_user 
+            WHERE 
+                tb_klien.id=" . $_GET['id'];
     $result = $conn->query($query);
     $row = $result->fetch_assoc();
 }
@@ -29,9 +31,9 @@ if (isset($_POST['submit'])) {
     $result = $conn->query($query);
     if ($result->num_rows == 0 || $username == $row['username']) {
         if ($password === $konfirmasi_password) {
-            $query = "UPDATE tb_user SET nama='$nama_lengkap', username='$username', password='$password' WHERE id=".$row['id_user'];
+            $query = "UPDATE tb_user SET nama='$nama_lengkap', username='$username', password='$password' WHERE id=" . $row['id_user'];
             if ($conn->query($query)) {
-                $query = "UPDATE tb_klien SET nik='$nik', nama_lengkap='$nama_lengkap', nomor_telepon='$nomor_telepon', email='$email' WHERE id=".$row['id'];
+                $query = "UPDATE tb_klien SET nik='$nik', nama_lengkap='$nama_lengkap', nomor_telepon='$nomor_telepon', email='$email' WHERE id=" . $row['id'];
                 if ($conn->query($query)) {
                     echo "<script>alert('Data dan akun klien berhasil diedit!');</script>";
                     echo "<script>window.location.href = '?page=klien';</script>";

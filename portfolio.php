@@ -1,3 +1,7 @@
+<?php 
+session_start();
+session_destroy();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -44,21 +48,21 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="assets/img/bg1.jpg" height="300" class="d-block w-100" alt="..." style="object-fit: cover;">
+                <img src="assets/img/port.jpg" height="400" class="d-block w-100" alt="..." style="object-fit: cover;">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Jingga Kreatif</h5>
                     <p>Wedding Organizer</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="assets/img/bg1.jpg" height="300" class="d-block w-100" alt="..." style="object-fit: cover;">
+                <img src="assets/img/port2.jpg" height="400" class="d-block w-100" alt="..." style="object-fit: cover;">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Jingga Kreatif</h5>
                     <p>Wedding Organizer</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="assets/img/bg1.jpg" height="300" class="d-block w-100" alt="..." style="object-fit: cover;">
+                <img src="assets/img/port3.jpg" height="400" class="d-block w-100" alt="..." style="object-fit: cover;">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Jingga Kreatif</h5>
                     <p>Wedding Organizer</p>
